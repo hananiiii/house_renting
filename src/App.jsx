@@ -1,32 +1,26 @@
-import './App.css'
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
 import Home from "./pages/home.jsx";
-import Single_home from './pages/single_home'
+import Single_home from './pages/single_home';
 import Join from './pages/join';
-function App() {
 
+function App() {
   return (
     <React.StrictMode>
-    <BrowserRouter>
-      <div className="App">
-        <div className="pages">
-          <Routes>
-            <Route path="/Home" element={<Home />} />
-            
-            <Route path="/Single_home/:id" element={<Single_home />} />
-            <Route path="/Join" element={<Join />} />
-            
-           
-           
-           
-          </Routes>
+      <Router>
+        <div className="App">
+          <div className="pages">
+            <Routes>
+              <Route path="/Home" element={<Home />} />
+              <Route path="/Single_home/:id" element={<Single_home />} />
+              <Route path="/Join" element={<Join />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </BrowserRouter>
-  </React.StrictMode>
+      </Router>
+    </React.StrictMode>
   )
 }
 
-export default App
+export default App;
